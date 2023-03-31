@@ -28,7 +28,7 @@ pub fn primes_up_to_v1(upper_bound: u64) -> Vec<u64> {
 }
 
 /// A more concise solution
-fn primes_up_to(upper_bound: u64) -> Vec<u64> {
+pub fn primes_up_to(upper_bound: u64) -> Vec<u64> {
     let mut sieve = vec![true; (upper_bound + 1) as usize];
     for n in 2..upper_bound {
         let mut p = n * 2;
