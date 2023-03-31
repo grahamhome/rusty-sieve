@@ -31,10 +31,12 @@ pub fn primes_up_to_v1(upper_bound: u64) -> Vec<u64> {
 pub fn primes_up_to(upper_bound: u64) -> Vec<u64> {
     let mut sieve = vec![true; (upper_bound + 1) as usize];
     for n in 2..upper_bound {
-        let mut p = n * 2;
-        while p <= upper_bound {
-            sieve[p as usize] = false;
-            p += n;
+        if n.pow(2) <= upper_bound {
+            let mut p = n * 2;
+            while p <= upper_bound {
+                sieve[p as usize] = false;
+                p += n;
+            }
         }
     }
     sieve
